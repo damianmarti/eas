@@ -89,7 +89,7 @@ export const Attest = () => {
         <div className={`mt-10 flex gap-2 ${visible ? "" : "invisible"} max-w-4xl`}>
           <div className="flex gap-5 bg-base-200 bg-opacity-80 z-0 p-7 rounded-2xl shadow-lg">
             <span className="text-3xl">👋🏻</span>
-            <div className="text-2xl">
+            <div className="text-lg">
               <div>
                 Attest BuidlGuidl members using <strong>Ethereum Attestation Service (EAS)</strong>.
               </div>
@@ -116,10 +116,10 @@ export const Attest = () => {
           </button>
         </div>
 
-        <div className="flex flex-col mt-6 px-7 py-8 bg-base-200 opacity-80 rounded-2xl shadow-lg border-2 border-primary">
-          <span className="text-4xl sm:text-6xl text-black">Attest a BuildGuidl Member</span>
+        <div className="text-sm flex flex-col mt-6 px-7 py-8 bg-base-200 opacity-80 rounded-2xl shadow-lg border-2 border-primary">
+          <span className="text-l sm:text-4xl text-black">Attest a BuildGuidl Member</span>
 
-          <div className="text-2xl mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5">
+          <div className="text-sm mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5">
             <div className="font-bold">BuidlGuidl Member to Attest:</div>
             <AddressInput
               placeholder="BuildGuidl Member Address or ENS"
