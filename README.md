@@ -1,4 +1,21 @@
-# 🏗 Scaffold-ETH 2
+# Ethereum Attestation Service (EAS)
+
+Attest BuidlGuidl members using [Ethereum Attestation Service (EAS)](https://attest.sh/).
+
+It uses a custom schema to attest a BuidlGuidl member.
+
+The schema is defined at [EAS Schema Registry](https://optimism.easscan.org/schema/view/0x3f28accb30b3437613eb87309d89b85e2f9f515616b603f5af8998e3529edb27).
+
+![eas-one vercel app_ (1)](https://github.com/damianmarti/eas/assets/466652/8449c88b-d01f-47aa-a5aa-e40abeb47699)
+
+## Implementation details
+
+Built with [EAS SDK](https://docs.attest.sh/docs/getting--started/javascript) to make a new attest (and to get one attestation data too). Code at https://github.com/damianmarti/eas/blob/main/packages/nextjs/components/attestation/Attest.tsx
+
+Use [GraphQL endpoint](https://docs.attest.sh/docs/getting--started/api) to get the existing attestations list. Code at https://github.com/damianmarti/eas/blob/main/packages/nextjs/components/attestation/List.tsx
+
+
+# 🏗 Built with Scaffold-ETH 2
 
 🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
 
