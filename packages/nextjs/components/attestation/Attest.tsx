@@ -91,10 +91,15 @@ export const Attest = () => {
             <span className="text-3xl">👋🏻</span>
             <div className="text-lg">
               <div>
-                Attest BuidlGuidl members using <strong>Ethereum Attestation Service (EAS)</strong>.
+                Attest BuidlGuidl members using{" "}
+                <a href="https://attest.sh/" target="_blank" className="text-primary font-bold" rel="noreferrer">
+                  Ethereum Attestation Service (EAS)
+                </a>
+                .
               </div>
+              <div className="mt-2">It uses a custom schema to attest a BuidlGuidl member.</div>
               <div className="mt-2">
-                It uses a custom schema to attest a BuidlGuidl member address. The schema is defined in
+                The schema is defined at
                 <a
                   href="https://optimism.easscan.org/schema/view/0x3f28accb30b3437613eb87309d89b85e2f9f515616b603f5af8998e3529edb27"
                   target="_blank"
