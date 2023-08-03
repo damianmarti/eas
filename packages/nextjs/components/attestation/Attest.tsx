@@ -129,7 +129,7 @@ export const Attest = () => {
             <div className="flex rounded-full border border-primary p-1 flex-shrink-0">
               <div className="flex rounded-full border-2 border-primary p-1">
                 <button
-                  className={`btn btn-primary rounded-full capitalize font-normal font-white w-40 flex items-center gap-1 hover:gap-2 transition-all tracking-widest ${
+                  className={`btn btn-primary rounded-full capitalize font-normal font-white w-35 flex items-center gap-1 hover:gap-2 transition-all tracking-widest ${
                     isLoading ? "loading" : ""
                   }`}
                   disabled={isLoading || !newMember}
