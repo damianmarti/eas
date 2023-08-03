@@ -115,7 +115,7 @@ export const List = () => {
                         size="sm"
                       />
                     </td>
-                    <td className="text-right">{attestation.timeCreated}</td>
+                    <td className="text-right">{new Date(attestation.timeCreated * 1000).toLocaleString()}</td>
                   </tr>
                 );
               })}
