@@ -55,6 +55,21 @@ p {
 }
 
 @container (max-width: 610px) {
+  .list__container--first_row-data {
+    width: 27px;
+  }
+}
+
+@container (max-width: 550px) {
+  .address__container-text {
+    max-width: 65px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@container (max-width: 400px) {
   .address__container-image {
     display: none;
   }
