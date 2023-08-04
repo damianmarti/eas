@@ -68,15 +68,15 @@ export const List = () => {
   }, scaffoldConfig.pollingInterval);
 
   return (
-    <div className="flex flex-col justify-center items-center bg-[url('/assets/gradient-bg.png')] bg-[length:100%_100%] py-10 px-5 sm:px-0 lg:py-auto max-w-[100vw] ">
+    <div className="list__container flex flex-col justify-center items-center bg-[url('/assets/gradient-bg.png')] bg-[length:100%_100%] py-10 px-5 sm:px-0 lg:py-auto max-w-[100vw] ">
       <div className="flex justify-center">
         <table className="table table-zebra w-full shadow-lg">
           <thead>
             <tr>
-              <th className="bg-primary text-white">UID</th>
-              <th className="bg-primary text-white">Attester</th>
-              <th className="bg-primary text-white">BuidlGuidl Member</th>
-              <th className="bg-primary text-white">Attested at</th>
+              <th className="bg-primary text-white p-1.5 sml:p-4">UID</th>
+              <th className="bg-primary text-white p-1.5 sml:p-4">Attester</th>
+              <th className="bg-primary text-white p-1.5 sml:p-4 address__container-text">BuidlGuidl Member</th>
+              <th className="bg-primary text-white p-1.5 sml:p-4">Attested at</th>
             </tr>
           </thead>
           {isLoading ? (
@@ -84,7 +84,7 @@ export const List = () => {
               {[...Array(10)].map((_, rowIndex) => (
                 <tr key={rowIndex} className="bg-base-200 hover:bg-base-300 transition-colors duration-200 h-12">
                   {[...Array(4)].map((_, colIndex) => (
-                    <td className="w-1/4" key={colIndex}>
+                    <td className="w-1/4 p-1 sml:p-4" key={colIndex}>
                       <div className="h-2 bg-gray-200 rounded-full animate-pulse"></div>
                     </td>
                   ))}
@@ -96,26 +96,29 @@ export const List = () => {
               {attestations.map(attestation => {
                 return (
                   <tr key={attestation.id} className="hover text-sm">
-                    <td className="w-1/4">
+                    <td className="w-1/4 p-1 sml:p-4">
                       <a
                         href={`https://optimism.easscan.org/attestation/view/${attestation.id}`}
                         title={attestation.id}
                         target="_blank"
                         rel="noreferrer"
+                        className="flex"
                       >
-                        {attestation.id.slice(0, 20) + "..."}
+                        <span className="list__container--first_row-data">{attestation.id.slice(0, 20)}</span>...
                       </a>
                     </td>
-                    <td className="w-1/4">
+                    <td className="w-1/4 p-1 sml:p-4">
                       <Address address={attestation.attester} size="sm" />
                     </td>
-                    <td className="w-1/4">
+                    <td className="w-1/4 p-1 sml:p-4">
                       <Address
                         address={schemaEncoder.decodeData(attestation.data)[0].value.value.toString()}
                         size="sm"
                       />
                     </td>
-                    <td className="text-right">{new Date(attestation.timeCreated * 1000).toLocaleString()}</td>
+                    <td className="text-right list__container--last_row-data p-1 sml:p-4">
+                      {new Date(attestation.timeCreated * 1000).toLocaleString()}
+                    </td>
                   </tr>
                 );
               })}
