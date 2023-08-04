@@ -30,3 +30,32 @@ p {
 .btn.btn-ghost {
   @apply shadow-none;
 }
+
+.list__container {
+  container-type: inline-size;
+}
+
+@container (max-width: 670px) {
+  .list__container--last_row-data {
+    max-width: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@container (max-width: 760px) {
+  .list__container--first_row-data {
+    width: 47px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+}
+
+@container (max-width: 610px) {
+  .address__container-image {
+    display: none;
+  }
+}

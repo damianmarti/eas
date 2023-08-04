@@ -68,7 +68,7 @@ export const List = () => {
   }, scaffoldConfig.pollingInterval);
 
   return (
-    <div className="flex flex-col justify-center items-center bg-[url('/assets/gradient-bg.png')] bg-[length:100%_100%] py-10 px-5 sm:px-0 lg:py-auto max-w-[100vw] ">
+    <div className="list__container flex flex-col justify-center items-center bg-[url('/assets/gradient-bg.png')] bg-[length:100%_100%] py-10 px-5 sm:px-0 lg:py-auto max-w-[100vw] ">
       <div className="flex justify-center">
         <table className="table table-zebra w-full shadow-lg">
           <thead>
@@ -96,17 +96,18 @@ export const List = () => {
               {attestations.map(attestation => {
                 return (
                   <tr key={attestation.id} className="hover text-sm">
-                    <td className="w-1/4">
+                    <td className="w-1/4 ">
                       <a
                         href={`https://optimism.easscan.org/attestation/view/${attestation.id}`}
                         title={attestation.id}
                         target="_blank"
                         rel="noreferrer"
+                        className="flex bg-slate-600"
                       >
-                        {attestation.id.slice(0, 20) + "..."}
+                        <span className="list__container--first_row-data">{attestation.id.slice(0, 20)}</span>...
                       </a>
                     </td>
-                    <td className="w-1/4">
+                    <td className="w-1/4 ">
                       <Address address={attestation.attester} size="sm" />
                     </td>
                     <td className="w-1/4">
@@ -115,7 +116,9 @@ export const List = () => {
                         size="sm"
                       />
                     </td>
-                    <td className="text-right">{new Date(attestation.timeCreated * 1000).toLocaleString()}</td>
+                    <td className="text-right list__container--last_row-data">
+                      {new Date(attestation.timeCreated * 1000).toLocaleString()}
+                    </td>
                   </tr>
                 );
               })}

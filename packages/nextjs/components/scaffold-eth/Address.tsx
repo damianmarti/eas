@@ -77,7 +77,7 @@ export const Address = ({ address, disableAddressLink, format, size = "base" }: 
 
   return (
     <div className="flex items-center">
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 address__container-image">
         {ensAvatar ? (
           // Don't want to use nextJS Image here (and adding remote patterns for the URL)
           // eslint-disable-next-line
